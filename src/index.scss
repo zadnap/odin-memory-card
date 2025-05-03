@@ -1,1 +1,11 @@
 @use './styles/reset';
+
+html {
+  font-family: 62.5%;
+}
+
+#root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
