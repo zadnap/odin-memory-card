@@ -3,6 +3,8 @@ import styles from './App.module.scss';
 import BoardItem from './components/BoardItem';
 import Card from './components/Card';
 import Title from './components/TItle';
+import UtilButton from './components/UtilButton';
+import { faBars, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -39,6 +41,10 @@ function App() {
   return (
     <div className={styles.app}>
       <Title>MEMORY CARD GAME</Title>
+      <div className={styles.buttonGroup}>
+        <UtilButton icon={faQuestion} />
+        <UtilButton icon={faBars} />
+      </div>
       <div className={styles.scoreBoard}>
         <BoardItem title="Score" content="14" />
         <BoardItem title="Best Score" content="23" />

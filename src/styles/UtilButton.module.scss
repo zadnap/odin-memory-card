@@ -1,0 +1,24 @@
+@use './variables' as *;
+
+.utilButton {
+  background-color: #ffffff54;
+  color: $text;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: border ease 0.1s;
+  transition: transform ease 0.3s;
+
+  &:hover {
+    border-color: currentColor;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
