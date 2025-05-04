@@ -1,0 +1,25 @@
+@use './variables' as *;
+
+.card {
+  cursor: pointer;
+  perspective: 1000px;
+  border: 3px solid $text;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #ffffff54;
+  transition: transform ease 0.3s;
+
+  .image {
+    margin-bottom: 10px;
+  }
+
+  .name {
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}

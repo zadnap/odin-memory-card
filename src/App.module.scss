@@ -6,12 +6,19 @@
   padding: 20px;
   color: $text;
   display: flex;
+  gap: 20px;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 
   .scoreBoard {
     display: flex;
     gap: 30px;
+  }
+
+  .cardDeck {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
   }
 }
