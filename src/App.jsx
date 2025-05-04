@@ -6,9 +6,11 @@ import Title from './components/TItle';
 import UtilButton from './components/UtilButton';
 import { faBars, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import Loading from './components/Loading';
+import MenuModal from './components/MenuModal';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [pokemonList, setPokemonList] = useState([]);
   const [numberOfPokemon, setNumberOfPokemon] = useState(12);
 
@@ -45,8 +47,7 @@ function App() {
     <div className={styles.app}>
       <Title>MEMORY CARD GAME</Title>
       <div className={styles.buttonGroup}>
-        <UtilButton icon={faQuestion} />
-        <UtilButton icon={faBars} />
+        <UtilButton icon={faBars} onClick={() => setOpenModal(true)} />
       </div>
       <div className={styles.scoreBoard}>
         <BoardItem title="Score" content="14" />
@@ -65,6 +66,14 @@ function App() {
             />
           ))}
         </div>
+      )}
+      {openModal && (
+        <MenuModal
+          title="Menu"
+          numberOfPokemon={numberOfPokemon}
+          setNumberOfPokemon={setNumberOfPokemon}
+          setOpenModal={setOpenModal}
+        />
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .utilButton {
-  background-color: #ffffff54;
+  background-color: $overlay;
   color: $text;
   border: none;
   outline: none;
