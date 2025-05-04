@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 import BoardItem from './components/BoardItem';
 import Card from './components/Card';
-import Title from './components/TItle';
+import Title from './components/Title';
 import UtilButton from './components/UtilButton';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Loading from './components/Loading';
