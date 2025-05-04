@@ -1,2 +1,12 @@
+@use '@/styles/variables' as *;
+
 .app {
+  min-height: 100vh;
+  background-color: $background;
+  padding: 20px;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
