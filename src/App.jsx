@@ -5,8 +5,10 @@ import Card from './components/Card';
 import Title from './components/TItle';
 import UtilButton from './components/UtilButton';
 import { faBars, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import Loading from './components/Loading';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [pokemonList, setPokemonList] = useState([]);
   const [numberOfPokemon, setNumberOfPokemon] = useState(12);
 
@@ -33,6 +35,7 @@ function App() {
         imgSrc: pokemon.sprites.other['official-artwork'].front_default,
       }));
       setPokemonList(data);
+      setIsLoading(false);
     }
 
     fetchPokemonData();
@@ -50,11 +53,19 @@ function App() {
         <BoardItem title="Best Score" content="23" />
         <BoardItem title="Time" content="01:23" />
       </div>
-      <div className={styles.cardDeck}>
-        {pokemonList.map((pokemon) => (
-          <Card key={pokemon.id} imgSrc={pokemon.imgSrc} name={pokemon.name} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className={styles.cardDeck}>
+          {pokemonList.map((pokemon) => (
+            <Card
+              key={pokemon.id}
+              imgSrc={pokemon.imgSrc}
+              name={pokemon.name}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
